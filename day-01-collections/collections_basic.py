@@ -50,9 +50,30 @@ print(info)
 # Production RAG
 # Cost matters
 
+# from qdrant_client.models import (
+#     VectorParams, Distance, QuantizationConfig
+# )
+
+# VectorParams(
+#     size=768,
+#     distance=Distance.COSINE,
+#     quantization_config=QuantizationConfig(
+#         scalar=True   # enables uint8 quantization
+#     )
+# )
+
 # Use binary when:
 
 # Massive scale (10M+)
 # First-stage retrieval
 # Speed > precision
 
+# from qdrant_client.models import BinaryQuantization
+
+# VectorParams(
+#     size=768,
+#     distance=Distance.COSINE,
+#     quantization_config=BinaryQuantization(
+#         always_ram=True
+#     )
+# )
