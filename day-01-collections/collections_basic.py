@@ -26,3 +26,33 @@ print("COLLECTION CREATED ")
 info = client.get_collection("day_01_collections")
 print(info)
 
+
+# collection with multiple vectors example :-
+
+#client.create_collection(
+#     collection_name="{collection_name}",
+#     vectors_config={
+#         "image": models.VectorParams(size=4, distance=models.Distance.DOT),
+#         "text": models.VectorParams(size=8, distance=models.Distance.COSINE),
+#     },
+# )
+
+
+# Use float32 when:
+
+# Small dataset
+# Max accuracy needed
+# Prototyping / research
+
+# Use uint8 when:
+
+# Millions of vectors
+# Production RAG
+# Cost matters
+
+# Use binary when:
+
+# Massive scale (10M+)
+# First-stage retrieval
+# Speed > precision
+
