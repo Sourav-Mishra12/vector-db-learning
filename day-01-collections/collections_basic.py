@@ -108,3 +108,15 @@ client.create_collection(
 )
 '''
 
+# checking that if the particular collection exists or not
+'''
+ client.collection_exists(collection_name="{collection_name}")
+'''
+
+# updating the collection parameters
+'''
+client.update_collection(
+   collection_name = "{collection_name}",
+   optimizers_config=models.OptimizersConfigDiff(indexing_threshold=10000),
+)
+'''
