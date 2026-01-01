@@ -77,3 +77,34 @@ print(info)
 #         always_ram=True
 #     )
 # )
+
+
+# QDRANT SUPPORTS SPARSE VECTORS AS A FIRST-CLASS CITITZEN
+
+# collections can contain sparse vectors as additional named vectors alongside regular dense vectors
+
+'''
+ VERY IMPORTANT RULES :-
+
+1. SPARSE VECTORS MUST BE NAMED 
+
+"text": modles.SparseVectorParams()
+
+2. THE NAME OF THE SPARSE & DENSE VECTORS SHOULD NOT BE THE SAME 
+
+dense_vector_name = "embedding"
+sparse_vector_name = "text"  
+
+3. THE DISTANCE METRICS SHOULD ALWAYS BE DOT 
+
+distance= DOT(fixed)  , because word overlap count / importnce ke liyee dot product best hota hai
+
+client.create_collection(
+      collection_name = "{collectiion_name}",
+      vectors_config={} ,  no dense vectors yet
+      sparse_vectors_config={
+             "text" : models.SparseVectorParams(),
+      },
+)
+'''
+
